@@ -46,4 +46,4 @@ jobs:
 
     steps:
       - name: Deploy to staging
-        run: curl -x POST "${{ secrets.RENDER_DEPLOY_HOOK}}"      
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK}}"      
