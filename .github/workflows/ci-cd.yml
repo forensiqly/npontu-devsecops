@@ -39,3 +39,11 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t npontu-devsecops .
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Deploy to staging
+        run: curl -x POST "${{ secrets.RENDER_DEPLOY_HOOK}}"      
